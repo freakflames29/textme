@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+/* .logoimg
+{
+  filter: brightness(0) invert(1);
+} */
