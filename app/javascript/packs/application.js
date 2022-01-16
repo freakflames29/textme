@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '@doabit/semantic-ui-sass'
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
