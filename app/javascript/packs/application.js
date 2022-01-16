@@ -13,9 +13,12 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-function start()
-{
-  $('.ui.dropdown').dropdown();
+function start() {
+    $('.ui.dropdown').dropdown();
+    $('.message .close').on('click', function () {
+            $(this).closest('.message').transition('fade');
+    });
 
 }
+
 $(document).on('turbolinks:load', start)

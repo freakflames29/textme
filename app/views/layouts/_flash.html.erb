@@ -1,0 +1,9 @@
+<% flash.each do |name, msg| %>
+  <div class="ui <%= name %> message">
+    <i class="close icon"></i>
+    <div class="header">
+      <%= msg %>
+    </div>
+    <!--  <p>You may now log-in with the username you have chosen</p>-->
+  </div>
+<% end %>
