@@ -3,6 +3,8 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
@@ -28,6 +30,13 @@ function start() {
     });
     $('.ui.radio.checkbox').checkbox();
     $('.ui.modal').modal('show');
+    tinymce.init({
+    selector: "#mytextarea",
+    plugins: "emoticons",
+    toolbar: "emoticons",
+    toolbar_location: "bottom",
+    menubar: false
+  });
     scroll_bottom()
 
 }
