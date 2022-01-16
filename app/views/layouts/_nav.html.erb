@@ -1,7 +1,7 @@
 <div class="ui small menu">
   <div class="ui container">
 
-    <%= link_to image_tag('rumi.png',style: 'height:40px;width:auto;'),root_path,class:'item' %>
+    <%= link_to image_tag('rumi.png', style: 'height:40px;width:auto;'), root_path, class: 'item' %>
     <a class="item">
       Messages
     </a>
@@ -10,14 +10,21 @@
         My profile
         <i class="dropdown icon"></i>
         <div class="menu">
-          <a class="item">Signup</a>
-          <%= link_to "Login",login_path,class:'item' %>
-          <a class="item">Logout</a>
+          <% if logged_in? %>
+            <%= link_to "Logout",logout_path,method: :delete,class: 'item' %>
+          <% else %>
+              <%= link_to "Login", login_path, class: 'item' %>
+              <a class="item">Signup</a>
+          <% end %>
         </div>
       </div>
-      <div class="item">
-        <div class="negative ui  button redbtn">Sign Up</div>
-      </div>
+      <% if !logged_in? %>
+        <div class="item">
+          <div class="negative ui  button redbtn">
+            <i class="user  icon"></i>Sign Up
+          </div>
+        </div>
+        <% end %>
     </div>
   </div>
 </div>
