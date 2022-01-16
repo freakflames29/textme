@@ -2,7 +2,7 @@
 
 .chatbox {
   min-width: 100%;
-  height: 450px;
+  height: 500px;
 }
 
 .userleft {
@@ -17,4 +17,9 @@
   border: none;
   margin-left: -35px;
   cursor: pointer ;
+}
+#msg__container
+{
+  height: 15em;
+  overflow: auto;
 }

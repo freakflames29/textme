@@ -12,12 +12,23 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+let scroll_bottom;
+scroll_bottom=function ()
+{
+    if ($('#msg__container').length>0)
+    {
+        $('#msg__container').scrollTop($('#msg__container')[0].scrollHeight);
+    }
+}
+
 function start() {
     $('.ui.dropdown').dropdown();
     $('.message .close').on('click', function () {
             $(this).closest('.message').transition('fade');
     });
+    scroll_bottom()
 
 }
 
 $(document).on('turbolinks:load', start)
+export default scroll_bottom
