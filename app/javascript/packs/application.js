@@ -27,6 +27,7 @@ function start() {
             $(this).closest('.message').transition('fade');
     });
     $('.ui.radio.checkbox').checkbox();
+    $('.ui.modal').modal('show');
     scroll_bottom()
 
 }

@@ -27,12 +27,17 @@
   <br>
 <% end %>
 
+<div class="ui four column centered grid">
+  <div class="column">
+<div class="ui card ">
+  <div class="content">
+
 <%= form_for(@user, html: { class: 'ui form', role: 'form' }, url: users_path) do |f| %>
   <div class="field">
     <%= f.label :username %>
     <div class="ui left icon input">
-      <%= f.text_field :username, placeholder: 'Enter Username', required: true %>
       <i class="user red icon"></i>
+      <%= f.text_field :username, placeholder: 'Enter Username', required: true %>
     </div>
   </div>
   <div class="field">
@@ -66,3 +71,10 @@
   <%= f.submit "Signup", class: 'ui red button' %>
   <br><br>
 <% end %>
+</div>
+</div>
+  </div>
+</div>
+<!--<div class="ui modal">-->
+<!--  <div class="header">Header</div>-->
+<!--</div>-->
