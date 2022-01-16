@@ -1,20 +1,28 @@
-
 <div class="ui grid">
-<!--  <div class="four wide column">-->
-<!--    <div class="ui vertical pointing menu">-->
-<!--      <a class="active item">-->
-<!--        Home-->
-<!--      </a>-->
-<!--      <a class="item">-->
-<!--        Messages-->
-<!--      </a>-->
-<!--      <a class="item">-->
-<!--        Friends-->
-<!--      </a>-->
-<!--    </div>-->
-<!--  </div>-->
+  <div class="four wide column">
+    <div class="ui card">
+      <div class="content">
+        <p class="ui green ribbon label">Online</p>
+        <div class="center aligned header"><%= current_user.username %></div>
+        <div class="center aligned description">
+          <p>Email:  <%= current_user.email %></p>
+        </div>
+      </div>
+      <div class="extra content">
+        <div class="center aligned author">
+          <% if current_user.gender.eql?('Male') %>
 
-  <div class="sixteen wide column">
+            <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/small/matt.jpg"> <%= current_user.username %>
+          <% else %>
+            <img class="ui avatar image" src="https://semantic-ui.com/images/avatar/small/jenny.jpg"> <%= current_user.username %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="twelve wide column">
     <div class="ui card fluid raised chatbox">
       <div class="content" id="msg__container">
         <div class="ui small feed" id="sourav">
@@ -26,15 +34,15 @@
         </div>
       </div>
       <div class="extra content">
-        <%= form_for(@message,html:{class:'ui reply form',role:'form'},url:message_path,remote:true ) do |f| %>
+        <%= form_for(@message, html: { class: 'ui reply form', role: 'form' }, url: message_path, remote: true) do |f| %>
           <div class="field">
             <div class="ui blue labeled submit icon input">
-              <%= f.text_field :msg,autofocus: true,autocomplete:"off",placeholder:'Type a Rumi...' %>
-              <%= f.button '<i class="icon red fa-paper-plane"></i>'.html_safe,class:'writebtn',id:'sbmtbtn' %>
+              <%= f.text_field :msg, autofocus: true, autocomplete: "off", placeholder: 'Type a Rumi...' %>
+              <%= f.button '<i class="icon red fa-paper-plane"></i>'.html_safe, class: 'writebtn', id: 'sbmtbtn' %>
 
             </div>
           </div>
-          <% end %>
+        <% end %>
       </div>
 
     </div>
