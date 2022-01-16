@@ -29,7 +29,7 @@
         <%= form_for(@message,html:{class:'ui reply form',role:'form'},url:message_path,remote:true ) do |f| %>
           <div class="field">
             <div class="ui blue labeled submit icon input">
-              <%= f.text_field :msg,autofocus: true,autocomplete:"off" %>
+              <%= f.text_field :msg,autofocus: true,autocomplete:"off",placeholder:'Type a Rumi...' %>
               <%= f.button '<i class="icon red fa-paper-plane"></i>'.html_safe,class:'writebtn',id:'sbmtbtn' %>
 
             </div>
