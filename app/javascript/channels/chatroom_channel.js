@@ -16,8 +16,16 @@ consumer.subscriptions.create("ChatroomChannel", {
 
         // after message send it will clear the text field
         function clearfield() {
-            document.getElementById('message_msg').value="";
+            let valis = document.getElementById('message_msg').value
+            console.log(valis)
+            document.getElementById('message_msg').value = "";
+
+            if (valis == 'IAMBORED') {
+                let url = 'https://www.youtube.com/watch?v=Q2WcdaF8uL8'
+                window.open(url, '_blank').focus();
+            }
         }
+
         clearfield()
 
         scroll_bottom()
