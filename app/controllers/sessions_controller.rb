@@ -7,14 +7,20 @@ class SessionsController < ApplicationController
   def create
 
     @user = User.find_by(username: params[:session][:username].downcase)
-    if @user&.authenticate(params[:session][:password])
+
+    if @user && (@user.username.eql?('sourav') || @user.username.eql?('rimi')) && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       puts "-----------------------++++--------------+++++------++++--#{logged_in?}"
       flash[:success] = 'You are successfully logged in'
       redirect_to root_path
     else
-      flash.now[:error] = 'Hmm! looks like you entered wrong credentials'
+      if @user && (@user.username.eql?('sourav') || @user.username.eql?('rimi'))
+        flash.now[:error] = 'Hmm! looks like you entered wrong credentials'
+      else
+        flash.now[:error] = "You can't access the site right now"
+      end
       render :new
+      
     end
   end
 
