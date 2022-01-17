@@ -24,12 +24,19 @@ consumer.subscriptions.create("ChatroomChannel", {
                 let url = 'https://www.youtube.com/watch?v=Q2WcdaF8uL8'
                 window.open(url, '_blank').focus();
             }
-             if (valis == 'ILOVEYOU') {
+            if (valis == 'ILOVEYOU') {
                 let div = document.getElementById('centerallign')
-                div.innerHTML='<img src="assets/love.gif" alt="fdsf">'
-                 setTimeout(function (){
-                     div.innerHTML=""
-                 },5000)
+                let heart = document.getElementById('lovecenter')
+                document.getElementById('song').play()
+
+                div.innerHTML = '<img src="assets/love.gif" alt="fdsf">'
+                setTimeout(function (){
+                    heart.innerHTML=' <img src="assets/the.gif" alt="xgif">'
+                },39000)
+                setTimeout(function () {
+                    div.innerHTML = ""
+                    heart.innerHTML=""
+                }, 55000)
             }
 
         }
