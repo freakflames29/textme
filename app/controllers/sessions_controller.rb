@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     @user = User.find_by(username: params[:session][:username].downcase)
 
-    if @user && (@user.username.eql?('sourav') || @user.username.eql?('rimi')) && @user.authenticate(params[:session][:password])
+    if @user && (@user.username.eql?('sourav') || @user.username.eql?('rimi') || @user.username.eql?('akash')) && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       puts "-----------------------++++--------------+++++------++++--#{logged_in?}"
       flash[:success] = 'You are successfully logged in'
