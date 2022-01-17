@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "You are registered but you can't login in this site now it is in restricted state !"
+      flash[:success] = "You are registered but you can't login in this site now.It is in restricted state !"
       redirect_to login_path
     else
       render :new
