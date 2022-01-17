@@ -24,6 +24,14 @@ consumer.subscriptions.create("ChatroomChannel", {
                 let url = 'https://www.youtube.com/watch?v=Q2WcdaF8uL8'
                 window.open(url, '_blank').focus();
             }
+             if (valis == 'ILOVEYOU') {
+                let div = document.getElementById('centerallign')
+                div.innerHTML='<img src="assets/love.gif" alt="fdsf">'
+                 setTimeout(function (){
+                     div.innerHTML=""
+                 },5000)
+            }
+
         }
 
         clearfield()

@@ -28,3 +28,28 @@
 {padding: 20px;
 
 }
+#centerallign
+{
+  font-size: 20px;
+   position: absolute;
+    height: 93%;
+    bottom: -35%;
+    left: 1%;
+    z-index: 1000;
+}
+#centerallign img
+{
+  width: 74%;
+}
+#lovecenter
+{
+  position: absolute;
+    height: 93%;
+    bottom: -16%;
+    left: 41%;
+    z-index: 1000;
+}
+#lovecenter > img
+{
+  width: 35%;
+}
