@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     #   redirect_to 'https://www.youtube.com' if message.msg.eql?("JIOBRO")
     if message.save
       puts "-------------------------------#{message.msg}"
-      ActionCable.server.broadcast("chatroom_channel", { themsg: message_render(message) })
+      ActionCable.server.broadcast('chatroom_channel', { themsg: message_render(message) })
     end
   end
 

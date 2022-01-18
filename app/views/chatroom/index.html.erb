@@ -8,12 +8,53 @@
 </div>
 <div class="ui grid">
   <div class="three wide column">
+    <h3>Choose your emjoi from here </h3>
+      <textarea id="txt"></textarea>
+  </div>
+
+
+  <div class="ten wide column">
+    <div class="ui card fluid raised chatbox">
+      <div class="content" id="msg__container">
+        <div class="ui small feed" id="sourav">
+            <%= link_to "Load old messages", all_message_path ,class:'ui black label'%>
+          <h4 class="ui header">Your Rumies
+
+
+           </h4>
+          <!--          here the messages is the instance variable of message.all-->
+          <%= render @messages %>
+
+
+
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_for(@message, html: { class: 'ui reply form', role: 'form' }, url: message_path, remote: true) do |f| %>
+          <div class="field">
+            <div class="ui blue labeled submit icon input">
+
+              <%= f.text_field :msg, autofocus: true, autocomplete: "off", placeholder: 'Type a Rumi...'%>
+
+              <%= f.button '<i class="icon red fa-paper-plane"></i>'.html_safe, class: 'writebtn', id: 'sbmtbtn' %>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- dsdsadsa -->
+  <div class="three wide column">
     <div class="ui card">
       <div class="content">
         <p class="ui green ribbon label">Online</p>
         <div class="center aligned header"><%= current_user.username %></div>
         <div class="center aligned description">
           <p>Email:  <%= current_user.email %></p>
+
         </div>
       </div>
       <div class="extra content">
@@ -28,40 +69,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="ten wide column">
-    <div class="ui card fluid raised chatbox">
-      <div class="content" id="msg__container">
-        <div class="ui small feed" id="sourav">
-          <h4 class="ui header">Your Rumies</h4>
-          <!--          here the messages is the instance variable of message.all-->
-          <%= render @messages %>
-
-
-
-        </div>
-      </div>
-      <div class="extra content">
-        <%= form_for(@message, html: { class: 'ui reply form', role: 'form' }, url: message_path, remote: true) do |f| %>
-          <div class="field">
-            <div class="ui blue labeled submit icon input">
-
-              <%= f.text_field :msg, autofocus: true, autocomplete: "off", placeholder: 'Type a Rumi...' ,rows:'2'%>
-
-              <%= f.button '<i class="icon red fa-paper-plane"></i>'.html_safe, class: 'writebtn', id: 'sbmtbtn' %>
-
-            </div>
-          </div>
-        <% end %>
-      </div>
-
-    </div>
-
-  </div>
-  <div class="three wide column">
-    <h3>Choose your emjoi from here </h3>
-      <textarea id="mytextarea"></textarea>
   </div>
 
 </div>

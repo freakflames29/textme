@@ -18,7 +18,7 @@ consumer.subscriptions.create("ChatroomChannel", {
         function clearfield() {
             let valis = document.getElementById('message_msg').value
             console.log(valis)
-            document.getElementById('message_msg').value = "";
+            // document.getElementById('message_msg').value = "";
 
             if (valis == 'IAMBORED') {
                 let url = 'https://www.youtube.com/watch?v=Q2WcdaF8uL8'

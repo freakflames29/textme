@@ -15,29 +15,41 @@ Turbolinks.start()
 ActiveStorage.start()
 
 let scroll_bottom;
-scroll_bottom=function ()
-{
-    if ($('#msg__container').length>0)
+scroll_bottom = function() {
+  if ($('#msg__container').length > 0) {
+    $('#msg__container').scrollTop($('#msg__container')[0].scrollHeight);
+  }
+}
+
+function sendEnter() {
+  console.log("callled on keydown")
+  $("#message_msg").on('keydown',function(e){
+    console.log("callled on keydown")
+    if (e.keyCode==13)
     {
-        $('#msg__container').scrollTop($('#msg__container')[0].scrollHeight);
+      console.log("clicked on enter")
+      $("button").click();
     }
+  });
 }
 
 function start() {
-    $('.ui.dropdown').dropdown();
-    $('.message .close').on('click', function () {
-            $(this).closest('.message').transition('fade');
-    });
-    $('.ui.radio.checkbox').checkbox();
-    $('.ui.modal').modal('show');
-    tinymce.init({
-    selector: "#mytextarea",
-    plugins: "emoticons",
-    toolbar: "emoticons",
-    toolbar_location: "bottom",
-    menubar: false
+  $('.ui.dropdown').dropdown();
+  $('.message .close').on('click', function() {
+    $(this).closest('.message').transition('fade');
   });
-    scroll_bottom()
+  $('.ui.radio.checkbox').checkbox();
+  $('.ui.modal').modal('show');
+
+  //   tinymce.init({
+  //   selector: "#mytextarea",
+  //   plugins: "emoticons",
+  //   toolbar: "emoticons",
+  //   toolbar_location: "bottom",
+  //   menubar: false
+  // });
+  // sendEnter()
+  scroll_bottom()
 
 }
 
