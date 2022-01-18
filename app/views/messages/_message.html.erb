@@ -4,6 +4,10 @@
       <b>
         <i class="userleft"><%= message.user.username %></i>:</b>
       <%= message.msg %>
+      <div class="date">
+        <%= time_ago_in_words(message.created_at) %> ago
+      </div>
     </div>
   </div>
 </div>
+    
