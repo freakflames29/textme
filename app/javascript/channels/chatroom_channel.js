@@ -18,13 +18,7 @@ consumer.subscriptions.create("ChatroomChannel", {
       count++
     };
 
-
-
-
-
-
-
-    document.title = `(${count}) New Rumi -A stupidly simple messenger`
+  document.title = `(${count}) New Rumi -A stupidly simple messenger`
 
     // }
     window.onfocus = function() {
